@@ -5,7 +5,7 @@
     <artifactId>stone</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>store</name>
+    <name>stone</name>
     <inceptionYear>2018</inceptionYear>
     <description>老码农妄想代码改变世界-奠基</description>
 
