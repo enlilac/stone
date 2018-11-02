@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.enlilac</groupId>
+    <artifactId>stone</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>store</name>
+    <inceptionYear>2018</inceptionYear>
+    <description>老码农妄想代码改变世界-奠基</description>
+
+    <properties>
+    </properties>
+
+    <url>https://github.com/enlilac/stone</url>
+
+    <mailingLists>
+        <mailingList>
+            <name>junzhou.wu</name>
+            <post>uwghh@126.com</post>
+        </mailingList>
+    </mailingLists>
+
+    <modules>
+    </modules>
+
+    <dependencyManagement>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+
+        </plugins>
+    </build>
+
+    <profiles>
+
+    </profiles>
+
+</project>
