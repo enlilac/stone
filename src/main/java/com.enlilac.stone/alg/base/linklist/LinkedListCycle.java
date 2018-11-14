@@ -77,17 +77,6 @@ public class LinkedListCycle {
         return result;
     }
 
-    public static <T> Node<T> copy(Node<T> source, Node<T> target) {
-        Node first = source;
-        Node result = target;
-        while (first != null) {
-            result.next = first;
-            result = result.next;
-            first = first.next;
-        }
-        return result;
-    }
-
     public static void main(String[] args) {
         System.out.println("null node:");
         Node head = NodeUtils.prepareNull();
