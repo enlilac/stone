@@ -25,20 +25,17 @@ public class LinkedListUtil {
          */
         Node<T> prev = null;
         Node<T> curr = head;
-        Node<T> next = curr.next;
-        while (curr != null) {
-            Node tmp = curr.next; // save the next node
+        Node<T> next;
+        while (true) {
+            next = curr.next; // save the next node
             curr.next = prev; // reverse current node
-            if (tmp == null) {
-                break;
-            }
             prev = curr; // prev to current node
-            curr = tmp; // current node to next
-            next = next.next; // next to next node
+            if (next == null) {
+                return curr;
+            }
+            curr = next; // current node to next
         }
-        return curr;
     }
-
 
     public static void testReverse() {
 
