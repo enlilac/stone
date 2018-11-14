@@ -1,6 +1,7 @@
 package com.enlilac.stone.alg.base.linklist;
 
 import com.enlilac.stone.alg.base.Node;
+import com.enlilac.stone.alg.base.NodeUtils;
 
 /**
  * 单链表链表操作训练
@@ -39,6 +40,22 @@ public class LinkedListReverse {
         }
     }
 
+    /**
+     * 递归法 逆转单链表
+     * @param node
+     * @return
+     */
+    static Node reverseLinkedList(Node node) {
+        if (node == null || node.next == null) {
+            return node;
+        } else {
+            Node headNode = reverseLinkedList(node.next);
+            node.next.next = node;
+            node.next = null;
+            return headNode;
+        }
+    }
+
     public static void testReverse() {
 
         Node<Integer> head = null;
@@ -71,6 +88,8 @@ public class LinkedListReverse {
         testReverse();
         testReverse2();
         testReverse3();
+        Node<Integer> head = NodeUtils.prepareFourNode();
+        System.out.println(reverseLinkedList(head));
     }
 }
 

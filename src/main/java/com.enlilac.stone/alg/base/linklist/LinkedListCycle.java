@@ -2,6 +2,7 @@ package com.enlilac.stone.alg.base.linklist;
 
 import com.enlilac.stone.alg.base.Node;
 import com.enlilac.stone.alg.base.NodeUtils;
+import com.sun.tools.javac.util.Assert;
 
 /**
  * 单链表链表操作训练
@@ -44,6 +45,50 @@ public class LinkedListCycle {
         }
     }
 
+    public static <T extends Comparable> Node<T> merge(Node<T> first, Node<T> second, Node<T> result) {
+        Assert.checkNonNull(result);
+        Node<T> f = first;
+        Node<T> s = second;
+        Node<T> r = result;
+        Node<T> tmp = r;
+        if (f == null && s != null) {
+            return s;
+        }
+        if (f != null && s == null) {
+            return f;
+        }
+
+        while (f != null && s != null) {
+            if (f.getData().compareTo(s.getData()) <= 0) {
+                r.next = f;
+                f = f.next;
+                r = r.next;
+                if (f == null) {
+                    r.next = s;
+                }
+            } else {
+                r.next = s;
+                s = s.next;
+                r = r.next;
+                if (s == null) {
+                    r.next = f;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static <T> Node<T> copy(Node<T> source, Node<T> target) {
+        Node first = source;
+        Node result = target;
+        while (first != null) {
+            result.next = first;
+            result = result.next;
+            first = first.next;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         System.out.println("null node:");
         Node head = NodeUtils.prepareNull();
@@ -60,6 +105,12 @@ public class LinkedListCycle {
         System.out.println("four node:");
         head = NodeUtils.prepareFourNode();
         System.out.println(checkCycle(head));
+
+        Node first = NodeUtils.prepareTwoNode();
+        Node second = NodeUtils.prepareFourNode();
+        Node result = new Node(-1);
+        merge(first, second, result);
+        System.out.println(result);
     }
 
 }
