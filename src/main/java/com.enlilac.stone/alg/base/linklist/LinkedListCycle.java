@@ -50,7 +50,6 @@ public class LinkedListCycle {
         Node<T> f = first;
         Node<T> s = second;
         Node<T> r = result;
-        Node<T> tmp = r;
         if (f == null && s != null) {
             return s;
         }
