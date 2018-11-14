@@ -1,5 +1,7 @@
 package com.enlilac.stone.alg.base.linklist;
 
+import com.enlilac.stone.alg.base.Node;
+
 /**
  * 单链表链表操作训练
  */
@@ -69,54 +71,6 @@ public class LinkedListReverse {
         testReverse();
         testReverse2();
         testReverse3();
-    }
-
-
-    public static class Node<T> {
-        private T data;
-        private Node<T> next;
-
-        public Node() {
-        }
-
-        public Node(T data) {
-            this.data = data;
-        }
-
-        public Node(T data, Node<T> next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public Node<T> getNext() {
-            return next;
-        }
-
-        public void setNext(Node<T> next) {
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder("Node [");
-            sb.append(data);
-            sb.append(",");
-            while (next != null) {
-                sb.append(next.data);
-                sb.append(",");
-                next = next.next;
-            }
-            sb.append("]");
-            return sb.toString();
-        }
     }
 }
 
