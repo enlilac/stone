@@ -3,7 +3,7 @@ package com.enlilac.stone.alg.base.linklist;
 /**
  * 单链表链表操作训练
  */
-public class LinkedListUtil {
+public class LinkedListReverse {
 
 
     /**
